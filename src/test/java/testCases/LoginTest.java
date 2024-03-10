@@ -11,10 +11,10 @@ public class LoginTest extends BaseClass {
 
 	@Test
 	public void LoginFailureTest() {
-		LoginPage login = new LoginPage(driver);
+		LoginPage login = new LoginPage(GetDriver());
 		login.LoginFunction("abc@gmail", "123xyz@246");
 
-		WebElement errorMessage = driver.findElement(By.id("error_box"));
+		WebElement errorMessage = GetDriver().findElement(By.id("error_box"));
 		System.out.println(errorMessage.getText());
 
 		String actMsg = errorMessage.getText();
@@ -24,7 +24,7 @@ public class LoginTest extends BaseClass {
 
 	@Test
 	public void LoginSuccessTest() {
-		LoginPage login = new LoginPage(driver);
+		LoginPage login = new LoginPage(GetDriver());
 		login.LoginFunction("real@abc.com", "realpwd@246");
 
 	}

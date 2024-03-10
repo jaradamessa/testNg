@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-25T08:47:51 CST" name="Suite" finished-at="2023-11-25T08:48:18 CST" duration-ms="27028">
+  <suite started-at="2024-01-09T10:55:23 CST" name="Default suite" finished-at="2024-01-09T10:55:38 CST" duration-ms="15128">
     <groups>
     </groups>
-    <test started-at="2023-11-25T08:47:51 CST" name="Test" finished-at="2023-11-25T08:48:18 CST" duration-ms="27028">
+    <test started-at="2024-01-09T10:55:23 CST" name="Default test" finished-at="2024-01-09T10:55:38 CST" duration-ms="15128">
       <class name="testCases.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:47:51 CST" name="setUp" finished-at="2023-11-25T08:47:57 CST" duration-ms="6085" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.LoginTest@248e319b]" started-at="2024-01-09T10:55:23 CST" name="setUp" finished-at="2024-01-09T10:55:33 CST" duration-ms="9192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="LoginFailureTest()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:47:57 CST" name="LoginFailureTest" finished-at="2023-11-25T08:48:06 CST" duration-ms="8705" status="PASS">
+        <test-method signature="LoginFailureTest()[pri:0, instance:testCases.LoginTest@248e319b]" started-at="2024-01-09T10:55:33 CST" name="LoginFailureTest" finished-at="2024-01-09T10:55:38 CST" duration-ms="5607" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginFailureTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:48:06 CST" name="tearDown" finished-at="2023-11-25T08:48:06 CST" duration-ms="305" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:48:06 CST" name="setUp" finished-at="2023-11-25T08:48:11 CST" duration-ms="5517" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="LoginSuccessTest()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:48:11 CST" name="LoginSuccessTest" finished-at="2023-11-25T08:48:17 CST" duration-ms="6128" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginSuccessTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@78e4deb0]" started-at="2023-11-25T08:48:17 CST" name="tearDown" finished-at="2023-11-25T08:48:18 CST" duration-ms="166" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@248e319b]" started-at="2024-01-09T10:55:38 CST" name="tearDown" finished-at="2024-01-09T10:55:38 CST" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.LoginTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
