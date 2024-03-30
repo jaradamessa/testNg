@@ -31,10 +31,16 @@ public class BaseClass {
 		
 		else if (DriverType.contains("remote")) {
 			ChromeOptions options = new ChromeOptions();
+<<<<<<< HEAD
 			options.addArguments("--no-sandbox"); 
 			options.addArguments("--disable-dev-shm-using") ;
 			options.addArguments("--window-size=1920,1080");
 			options.addArguments("--headless") ;
+=======
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setPlatform(Platform.LINUX);	
+			cap.setBrowserName("chrome");
+>>>>>>> 38a38c2b01efacbeca399ddce1aa4d25b98f39a9
 			driver = new RemoteWebDriver(new URL("http:// 18.207.217.4:4444"),options);
 			/*
 			 * DesiredCapabilities cap = new DesiredCapabilities();
