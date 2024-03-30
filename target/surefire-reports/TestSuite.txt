@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 4, Time elapsed: 2.109 s <<< FAILURE! - in TestSuite
-testCases.LoginTest.SetUp  Time elapsed: 1.728 s  <<< FAILURE!
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 4, Time elapsed: 1.955 s <<< FAILURE! - in TestSuite
+testCases.LoginTest.SetUp  Time elapsed: 1.586 s  <<< FAILURE!
 java.lang.NullPointerException
 
-testCases.LoginTest.SetUp  Time elapsed: 1.728 s  <<< FAILURE!
+testCases.LoginTest.SetUp  Time elapsed: 1.587 s  <<< FAILURE!
 java.lang.NullPointerException
 

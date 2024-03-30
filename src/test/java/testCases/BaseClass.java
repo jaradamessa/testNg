@@ -30,28 +30,27 @@ public class BaseClass {
 		} 
 		
 		else if (DriverType.contains("remote")) {
-			DesiredCapabilities cap = new DesiredCapabilities();
-			cap.setPlatform(Platform.LINUX);	
-			cap.setBrowserName("chrome");
-			driver = new RemoteWebDriver(new URL("http://18.207.217:4444"),cap);
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox"); 
+			options.addArguments("--disable-dev-shm-using") ;
+			options.addArguments("--window-size=1920,1080");
+			options.addArguments("--headless") ;
+			driver = new RemoteWebDriver(new URL("http:// 18.207.217.4:4444"),options);
 			/*
 			 * DesiredCapabilities cap = new DesiredCapabilities();
-			 * cap.setPlatform(Platform.WIN11); cap.setBrowserName("chrome"); driver = new
-			 * RemoteWebDriver(new URL("http://localhost:4444"), cap);
+			 * cap.setPlatform(Platform.WIN11);
+			 *  cap.setBrowserName("chrome");
+			 *   driver = new RemoteWebDriver(new URL("http://localhost:4444"), cap);
 			 */
 		}
 
 		else {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox"); 
-			options.addArguments("--disable-setuid-sandbox") ;
 			options.addArguments("--disable-dev-shm-using") ;
-			options.addArguments("--disable-extensions") ;
-			options.addArguments("--disable-gpu") ;
-			options.addArguments("start-maximized") ;
-			options.addArguments("disable-infobars") ;
+			options.addArguments("--window-size=1920,1080");
 			options.addArguments("--headless") ;
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 		
 					
 		}
