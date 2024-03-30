@@ -1,60 +1,84 @@
 package testCases;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-
 public class BaseClass {
-	
-WebDriver driver;
-	
-	private ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
+
+	RemoteWebDriver driver;
+
+	private ThreadLocal<RemoteWebDriver> threadLocalDriver = new ThreadLocal<>();
 
 	@BeforeMethod
-	public void SetUp() {
+	public void SetUp() throws MalformedURLException {
 
 		String DriverType = System.getProperty("Browser");
-		if (DriverType.contains("firefox")) {
-
-			driver = new FirefoxDriver();
-
-		} else {
-
-			driver = new ChromeDriver();
-		}
 		
+		if (DriverType.contains("firefox")) {
+			driver = new FirefoxDriver();
+			//DriverType.contains("firefox")
+		} 
+		
+		else if (DriverType.contains("remote")) {
+			DesiredCapabilities cap = new DesiredCapabilities();
+			cap.setPlatform(Platform.LINUX);	
+			cap.setBrowserName("chrome");
+			driver = new RemoteWebDriver(new URL("http://18.207.217:4444"),cap);
+			/*
+			 * DesiredCapabilities cap = new DesiredCapabilities();
+			 * cap.setPlatform(Platform.WIN11); cap.setBrowserName("chrome"); driver = new
+			 * RemoteWebDriver(new URL("http://localhost:4444"), cap);
+			 */
+		}
+
+		else {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox"); 
+			options.addArguments("--disable-setuid-sandbox") ;
+			options.addArguments("--disable-dev-shm-using") ;
+			options.addArguments("--disable-extensions") ;
+			options.addArguments("--disable-gpu") ;
+			options.addArguments("start-maximized") ;
+			options.addArguments("disable-infobars") ;
+			options.addArguments("--headless") ;
+			driver = new ChromeDriver();
+		
+					
+		}
+
 		SetDriver(driver);
 		GetDriver().get("https://simplilearn.com/");
 		GetDriver().manage().window().maximize();
-		GetDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		GetDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 
-	
+	@AfterMethod
+	public void TearDown() {
 
-	
-		@AfterMethod
-		public void TearDown() {
-
-			GetDriver().close();
-
-		}
-		
-		public void SetDriver(WebDriver driver) {
-
-			threadLocalDriver.set(driver);
-
-		}
-		
-		public WebDriver GetDriver() {
-
-			return threadLocalDriver.get();
-
-		}
+		GetDriver().close();
 
 	}
 
+	public void SetDriver(RemoteWebDriver driver) {
+
+		threadLocalDriver.set(driver);
+
+	}
+
+	public RemoteWebDriver GetDriver() {
+
+		return threadLocalDriver.get();
+
+	}
+
+}
