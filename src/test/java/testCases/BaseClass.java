@@ -51,7 +51,7 @@ public class BaseClass {
 			options.addArguments("start-maximized") ;
 			options.addArguments("disable-infobars") ;
 			options.addArguments("--headless") ;
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 		
 					
 		}
